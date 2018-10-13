@@ -16,7 +16,7 @@
 package com.ncl.adapter.exception;
 
 /**
- * RendererException created to be thrown when the RendererBuilder implementation returns a null
+ * RendererException created to be thrown when the CellTypeManager implementation returns a null
  * prototype class.
  *
  * @author Pedro Vicente Gómez Sánchez.

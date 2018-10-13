@@ -19,8 +19,8 @@ package com.ncl.adapter;
 import java.util.Collection;
 
 /**
- * Interface created to represent the adaptee collection used in RendererAdapter and
- * RendererAdapter. RendererAdapter and RendererAdapter will be created with a RendererBuilder
+ * Interface created to represent the adaptee collection used in GenericAdapter and
+ * GenericAdapter. GenericAdapter and GenericAdapter will be created with a CellTypeManager
  * and an com.intervalintl.renderer.AdapteeCollection that store all the content to show in a ListView or RecyclerView
  * widget.
  *

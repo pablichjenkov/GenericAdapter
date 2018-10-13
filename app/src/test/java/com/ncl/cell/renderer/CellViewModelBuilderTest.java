@@ -28,11 +28,11 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
 /**
- * Test class created to check the correct behaviour of RendererBuilder
+ * Test class created to check the correct behaviour of CellTypeManager
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class RendererBuilderTest {
+public class CellViewModelBuilderTest {
 
   private ObjectRendererBuilder rendererBuilder;
 

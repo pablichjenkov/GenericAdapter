@@ -16,8 +16,8 @@
 package com.ncl.adapter.exception;
 
 /**
- * Exception created to be thrown when a RendererBuilder is created without parent. RendererBuilder
- * needs a ViewGroup parent to pass it as parameter to Renderer instances.
+ * Exception created to be thrown when a CellTypeManager is created without parent. CellTypeManager
+ * needs a ViewGroup parent to pass it as parameter to CellViewModel instances.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */

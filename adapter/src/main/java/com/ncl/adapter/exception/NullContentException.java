@@ -16,8 +16,8 @@
 package com.ncl.adapter.exception;
 
 /**
- * Exception created to be thrown when a RendererBuilder is created without content.
- * RendererBuilder needs a content to create Renderer instances.
+ * Exception created to be thrown when a CellTypeManager is created without content.
+ * CellTypeManager needs a content to create CellViewModel instances.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */

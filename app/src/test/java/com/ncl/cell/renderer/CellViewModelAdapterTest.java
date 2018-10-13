@@ -18,7 +18,7 @@ package com.ncl.cell.renderer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.ncl.adapter.exception.NullRendererBuiltException;
+import com.ncl.adapter.exception.CellViewModelCreateException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,11 +37,11 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Test class created to check the correct behaviour of RendererAdapter.
+ * Test class created to check the correct behaviour of GenericAdapter.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-@Config(emulateSdk = 16) @RunWith(RobolectricTestRunner.class) public class RendererAdapterTest {
+@Config(emulateSdk = 16) @RunWith(RobolectricTestRunner.class) public class CellViewModelAdapterTest {
 
   private static final int ANY_SIZE = 11;
   private static final int ANY_POSITION = 2;
@@ -110,7 +110,7 @@ import static org.mockito.Mockito.when;
     verify(adapter).updateRendererExtraValues(ANY_OBJECT, mockedRenderer, ANY_POSITION);
   }
 
-  @Test(expected = NullRendererBuiltException.class)
+  @Test(expected = CellViewModelCreateException.class)
   public void shouldThrowNullRendererBuiltException() {
     adapter.onCreateViewHolder(mockedParent, ANY_ITEM_VIEW_TYPE);
   }

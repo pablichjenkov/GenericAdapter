@@ -16,7 +16,7 @@
 package com.ncl.adapter.exception;
 
 /**
- * Exception created to be thrown when any renderer is not inflating a view. All Renderer instances
+ * Exception created to be thrown when any renderer is not inflating a view. All CellViewModel instances
  * have to inflate a view and return it in inflateView method.
  *
  * @author Pedro Vicente Gómez Sánchez.

@@ -16,9 +16,9 @@
 package com.ncl.adapter.exception;
 
 /**
- * Exception created to be thrown when a RendererBuilder is created without a LayoutInflater
- * instance. RendererBuilder needs one LayoutInflater to pass it as parameter to Renderer instances
- * in order to be able to inflate the view associated to the Renderer.
+ * Exception created to be thrown when a CellTypeManager is created without a LayoutInflater
+ * instance. CellTypeManager needs one LayoutInflater to pass it as parameter to CellViewModel instances
+ * in order to be able to inflate the view associated to the CellViewModel.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */

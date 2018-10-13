@@ -15,12 +15,12 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 /**
- * Test created to check the correctness of Renderer<T>
+ * Test created to check the correctness of CellViewModel<T>
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
 
-public class RendererTest {
+public class CellViewModelTest {
 
   @Spy private ObjectRenderer renderer;
 

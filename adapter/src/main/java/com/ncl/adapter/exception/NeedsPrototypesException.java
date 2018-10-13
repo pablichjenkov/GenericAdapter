@@ -16,8 +16,8 @@
 package com.ncl.adapter.exception;
 
 /**
- * Exception created to be thrown when a RendererBuilder be created or configured without any
- * prototype. A RendererBuilder implementation needs prototypes to create or recycle new Renderer
+ * Exception created to be thrown when a CellTypeManager be created or configured without any
+ * prototype. A CellTypeManager implementation needs prototypes to create or recycle new CellViewModel
  * instances.
  *
  * @author Pedro Vicente Gómez Sánchez.

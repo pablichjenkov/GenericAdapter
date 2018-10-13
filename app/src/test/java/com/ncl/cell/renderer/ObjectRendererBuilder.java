@@ -3,7 +3,7 @@ package com.ncl.cell.renderer;
 import java.util.List;
 
 /**
- * RendererBuilder created only for testing purposes.
+ * CellTypeManager created only for testing purposes.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */

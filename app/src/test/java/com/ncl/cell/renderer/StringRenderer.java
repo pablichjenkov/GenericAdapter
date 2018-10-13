@@ -20,7 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Renderer created only for testing purposes.
+ * CellViewModel created only for testing purposes.
  *
  * @author Rostyslav Roshak.
  */
