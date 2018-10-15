@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="96dp"
+    android:layout_height="48dp"
     android:background="@android:color/holo_blue_bright">
 
     <TextView
+        android:id="@+id/label"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="left|center"
+        android:gravity="left|center_vertical"
         android:textStyle="bold"
+        android:paddingLeft="16dp"
         android:text="Cell Type 2"/>
 
 </LinearLayout>

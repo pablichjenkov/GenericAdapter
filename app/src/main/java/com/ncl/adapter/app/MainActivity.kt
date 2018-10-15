@@ -1,19 +1,40 @@
 package com.ncl.adapter.app
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ncl.adapter.*
+import java.util.Random
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var genericAdapter: GenericAdapter<CellViewModel<*>>
-    private val viewModelCollection: ListAdapteeCollection<CellViewModel<*>> = ListAdapteeCollection()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var genericAdapter: GenericAdapter<CellViewModel<GenericViewHolder>>
+    private val viewModelCollection: ArrayList<CellViewModel<GenericViewHolder>> = ArrayList()
+
+    private var factoryMap: HashMap<Int, (pos: Int) -> CellViewModel<GenericViewHolder>> = HashMap()
+
+    init {
+
+        this.factoryMap[1] = { pos: Int ->
+            CellViewModelType1(pos) as CellViewModel<GenericViewHolder>
+        }
+
+        this.factoryMap[2] = { pos: Int ->
+            CellViewModelType2(pos) as CellViewModel<GenericViewHolder>
+        }
+
+        this.factoryMap[3] = { pos: Int ->
+            CellViewModelType3(pos) as CellViewModel<GenericViewHolder>
+        }
+
+        this.factoryMap[4] = { pos: Int ->
+            CellViewModelType4(pos) as CellViewModel<GenericViewHolder>
+        }
+
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,40 +43,11 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.genericRecycler)
 
-        val cellTypeManager = CellTypeManager<CellViewModel<*>>()
-
-        cellTypeManager.bind(CellViewModelType1::class.java, object: CellViewHolderFactory<CellViewModelType1, ViewHolderType1> {
-
-            override fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup): ViewHolderType1 {
-                        return ViewHolderType1(inflater.inflate(R.layout.cell_1, parent, false))
-                    }
-
-                })
-
-        cellTypeManager.bind(CellViewModelType2::class.java, object: CellViewHolderFactory<CellViewModelType2, ViewHolderType2> {
-
-            override fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup): ViewHolderType2 {
-                        return ViewHolderType2(inflater.inflate(R.layout.cell_2, parent, false))
-                    }
-
-                })
-
-        cellTypeManager.bind(CellViewModelType3::class.java, object: CellViewHolderFactory<CellViewModelType3, ViewHolderType3> {
-
-            override fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup): ViewHolderType3 {
-                        return ViewHolderType3(inflater.inflate(R.layout.cell_3, parent, false))
-                    }
-
-                })
-
-        // todo: complete sample app
-        genericAdapter = GenericAdapter(cellTypeManager)
-
         recyclerView.layoutManager = LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL,
                 false)
 
-
+        genericAdapter = GenericAdapter()
         recyclerView.adapter = genericAdapter
     }
 
@@ -66,18 +58,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun populateViewModels() {
-        viewModelCollection.add(CellViewModelType1())
-        viewModelCollection.add(CellViewModelType2())
-        viewModelCollection.add(CellViewModelType3())
-        viewModelCollection.add(CellViewModelType2())
-        viewModelCollection.add(CellViewModelType3())
-        viewModelCollection.add(CellViewModelType1())
-        viewModelCollection.add(CellViewModelType3())
-        viewModelCollection.add(CellViewModelType1())
-        viewModelCollection.add(CellViewModelType2())
-        viewModelCollection.add(CellViewModelType1())
-        viewModelCollection.add(CellViewModelType2())
-        viewModelCollection.add(CellViewModelType3())
+
+        val random = Random()
+
+        for (i in 0..19) {
+
+            val nextViewModelType = random.nextInt(4) + 1
+
+            factoryMap[nextViewModelType]
+                    ?.invoke(i)
+                    ?.let {
+                        viewModelCollection.add(it)
+                    }
+
+        }
+
     }
 
 }

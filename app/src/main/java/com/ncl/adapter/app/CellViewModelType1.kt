@@ -1,29 +1,23 @@
 package com.ncl.adapter.app
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import com.ncl.adapter.CellViewModel
 import com.ncl.adapter.GenericAdapter
+import com.ncl.adapter.GenericViewHolder
 
 
-class CellViewModelType1 : CellViewModel<ViewHolderType1>() {
+class CellViewModelType1(val position: Int): CellViewModel<ViewHolderType1>() {
 
-
-    override fun bindViewHolder(adapter: GenericAdapter<CellViewModel<RecyclerView.ViewHolder>>?, holder: ViewHolderType1?) {
+    override fun createViewHolder(inflater: LayoutInflater, parent: ViewGroup): ViewHolderType1 {
+        return ViewHolderType1(inflater.inflate(R.layout.cell_1, parent, false))
     }
 
-    override fun onSetUpView(rootView: View?) {
-
+    override fun bindViewHolder(adapter: GenericAdapter<out CellViewModel<GenericViewHolder>>, holder: ViewHolderType1) {
+        holder.label.append(" , pos: $position")
     }
 
-    override fun onHookListeners(rootView: View?) {
-
-    }
-
-    override fun onBound() {
-
+    override fun unbindViewHolder(adapter: GenericAdapter<out CellViewModel<GenericViewHolder>>, holder: ViewHolderType1) {
     }
 
 }

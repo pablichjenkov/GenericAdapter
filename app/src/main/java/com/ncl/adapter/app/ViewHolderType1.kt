@@ -1,8 +1,12 @@
 package com.ncl.adapter.app
 
 import android.view.View
-import androidx.recyclerview.widget.RecyclerView
+import android.widget.TextView
 import com.ncl.adapter.GenericViewHolder
 
 
-class ViewHolderType1(view: View) : GenericViewHolder<CellViewModelType1>(view)
+class ViewHolderType1(var view: View) : GenericViewHolder(view) {
+
+    var label: TextView = view.findViewById(R.id.label)
+
+}

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ncl.adapter.GenericViewHolder
 
 
-class ViewHolderType3(view: View) : GenericViewHolder(view) {
+class ViewHolderType4(view: View) : GenericViewHolder(view) {
 
     var label: TextView = view.findViewById(R.id.label)
 
